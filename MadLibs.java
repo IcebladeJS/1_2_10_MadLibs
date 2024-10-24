@@ -11,42 +11,34 @@ public class MadLib {
   int lastLineWordType;
   
   public void create() {
-    String Number;
-    
     for (int lineNumber = 1; lineNumber <= 3; lineNumber++) {
-      
       if (lineNumber == 1) {
-        Number = "first";
+        System.out.println("Enter the first line of your MadLib, using ? for the missing word.");
       } else if (lineNumber == 2) {
-        Number = "second";
+        System.out.println("Enter the second line of your MadLib, using ? for the missing word.");
       } else {
-        Number = "last";
+        System.out.println("Enter the last line of your MadLib, using ? for the missing word.");
       }
       
-      System.out.println("Enter the " + Number + " line of your MadLib, using ? for the missing word.");
+      Scanner askLineMadLib = new Scanner(System.in);
         
       if (lineNumber == 1) {
-        Scanner askFirstLineMadLib = new Scanner(System.in);
-        firstLineMadLib = askFirstLineMadLib.nextLine();
+        firstLineMadLib = askLineMadLib.nextLine();
       } else if (lineNumber == 2) {
-        Scanner askSecondLineMadLib = new Scanner(System.in);
-        secondLineMadLib = askSecondLineMadLib.nextLine();
+        secondLineMadLib = askLineMadLib.nextLine();
       } else {
-        Scanner askLastLineMadLib = new Scanner(System.in);
-        lastLineMadLib = askLastLineMadLib.nextLine();
+        lastLineMadLib = askLineMadLib.nextLine();
       }
     
       System.out.println("Indicate whether the missing word is a \n1: Noun\n2: Verb\n3: Adjective");
-        
+      Scanner askWordType = new Scanner(System.in);
+      
       if (lineNumber == 1) {
-        Scanner askFirstLineWordType = new Scanner(System.in);
-        firstLineWordType = askFirstLineWordType.nextInt();
+        firstLineWordType = askWordType.nextInt();
       } else if (lineNumber == 2) {
-        Scanner askSecondLineWordType = new Scanner(System.in);
-        secondLineWordType = askSecondLineWordType.nextInt();
+        secondLineWordType = askWordType.nextInt();
       } else {
-        Scanner askLastLineWordType = new Scanner(System.in);
-        lastLineWordType = askLastLineWordType.nextInt();
+        lastLineWordType = askWordType.nextInt();
       }
     }
   }
